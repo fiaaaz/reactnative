@@ -1,98 +1,127 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
-
-import { HelloWave } from '@/components/hello-wave';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
+import { View, StyleSheet } from "react-native";
+import { Image } from "expo-image";
+import { ThemedText } from "@/components/themed-text";
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
+    <View style={styles.container}>
+      {/* wallpaper */}
+      <Image
+        source={require("D:/kuliah/semester 5/PGPBL/reactnative/assets/images/wp.png")}
+        style={styles.wallpaper}
+      />
 
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+      {/* Konten */}
+      <View style={styles.centerContent}>
+
+        {/* === CARD BULAT UNTUK LOGO === */}
+        <View style={styles.circleCard}>
+          <Image
+            source={require("D:/kuliah/semester 5/PGPBL/reactnative/assets/images/NGEMBEL2.png")}
+            style={styles.logo}
+          />
+        </View>
+
+        {/* CARD TULISAN */}
+        <View style={styles.card}>
+          <ThemedText type="title" style={styles.title}>
+            MALING
+          </ThemedText>
+
+          <ThemedText style={styles.subtitle}>
+            MaLang Informasi Navigasi Guide
+          </ThemedText>
+        </View>
+
+      </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+  container: {
+    flex: 1,
+    backgroundColor: "#ffffff",
+    justifyContent: "space-between",
+    alignItems: "center",
+    overflow: "hidden",
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+
+  // === KONTEN ===
+  centerContent: {
+    justifyContent: "center",
+    alignItems: "center",
+    flex: 1,
+    gap: 10,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
+
+  // logo di dalam card bulat
+  logo: {
+    width: 160,
+    height: 160,
+    resizeMode: "contain",
+  },
+
+  // === CARD BULAT TAMBAHAN ===
+  circleCard: {
+    width: 200,
+    height: 200,
+    backgroundColor: "rgba(0, 0, 0, 0.8)",
+    borderRadius: 200,
+    justifyContent: "center",
+    alignItems: "center",
+
+    // bayangan halus
+    shadowColor: "#000",
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 4 },
+    elevation: 8,
+
+    marginBottom: 10,
+  },
+
+  // Warna title → Deep Blue
+  title: {
+    fontSize: 40,
+    fontWeight: "800",
+    color: "#355C7D",
+    marginBottom: 4,
+  },
+
+  // Subtitle → Violet Gray
+  subtitle: {
+    fontSize: 16,
+    letterSpacing: 1.5,
+    color: "#725A7A",
+    fontWeight: "500",
+  },
+
+  wallpaper: {
+    position: "absolute",
+    width: "100%",
+    height: "100%",
+    top: 0,
     left: 0,
-    position: 'absolute',
+    resizeMode: "cover",
+    zIndex: -1,
+  },
+
+  card: {
+    backgroundColor: "rgba(255, 255, 255, 0.7)",
+    paddingVertical: 20,
+    paddingHorizontal: 30,
+    borderRadius: 20,
+    alignItems: "center",
+    marginTop: 10,
+
+    // shadow iOS
+    shadowColor: "#000",
+    shadowOpacity: 0.15,
+    shadowRadius: 6,
+    shadowOffset: { width: 0, height: 3 },
+
+    // shadow Android
+    elevation: 6,
   },
 });

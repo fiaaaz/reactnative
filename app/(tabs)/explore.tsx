@@ -1,112 +1,229 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import { View, StyleSheet, ScrollView } from "react-native";
+import { Image } from "expo-image";
+import { ThemedText } from "@/components/themed-text";
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 
-import { Collapsible } from '@/components/ui/collapsible';
-import { ExternalLink } from '@/components/external-link';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Fonts } from '@/constants/theme';
-
-export default function TabTwoScreen() {
+export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-      headerImage={
-        <IconSymbol
-          size={310}
-          color="#808080"
-          name="chevron.left.forwardslash.chevron.right"
-          style={styles.headerImage}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText
-          type="title"
-          style={{
-            fontFamily: Fonts.rounded,
-          }}>
-          Explore
-        </ThemedText>
-      </ThemedView>
-      <ThemedText>This app includes example code to help you get started.</ThemedText>
-      <Collapsible title="File-based routing">
-        <ThemedText>
-          This app has two screens:{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/explore.tsx</ThemedText>
-        </ThemedText>
-        <ThemedText>
-          The layout file in <ThemedText type="defaultSemiBold">app/(tabs)/_layout.tsx</ThemedText>{' '}
-          sets up the tab navigator.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/router/introduction">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Android, iOS, and web support">
-        <ThemedText>
-          You can open this project on Android, iOS, and the web. To open the web version, press{' '}
-          <ThemedText type="defaultSemiBold">w</ThemedText> in the terminal running this project.
-        </ThemedText>
-      </Collapsible>
-      <Collapsible title="Images">
-        <ThemedText>
-          For static images, you can use the <ThemedText type="defaultSemiBold">@2x</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">@3x</ThemedText> suffixes to provide files for
-          different screen densities
-        </ThemedText>
+    <View style={styles.container}>
+
+      {/* Wallpaper */}
+      <Image
+        source={require("D:/kuliah/semester 5/PGPBL/reactnative/assets/images/wp.png")}
+        style={styles.wallpaper}
+      />
+
+      {/* Scrollable Content */}
+      <ScrollView contentContainerStyle={styles.centerContent} showsVerticalScrollIndicator={false}>
+
+        {/* ======================= */}
+        {/* JUDUL APP      */}
+        {/* ======================= */}
+        <View style={[styles.card, { alignItems: "center" }]}>
+          <ThemedText type="title" style={styles.title}>
+            <FontAwesome5 name="compass" size={30} color="#355C7D" /> MALING
+          </ThemedText>
+
+          <ThemedText style={styles.sectionTitleCenter}>
+            MaLang Informasi Navigasi Guide (Kota Malang)
+          </ThemedText>
+        </View>
+
+        {/* ======================= */}
+        {/*  DESKRIPSI SINGKAT */}
+        {/* ======================= */}
+        <View style={[styles.card, { alignItems: "center" }]}>
+          <ThemedText style={styles.descriptionTextCenter}>
+            MALING adalah aplikasi guide pariwisata terpadu yang didedikasikan
+            sepenuhnya untuk menjelajahi keunikan dan pesona Kota Malang.
+          </ThemedText>
+        </View>
+
         <Image
-          source={require('@/assets/images/react-logo.png')}
-          style={{ width: 100, height: 100, alignSelf: 'center' }}
+          source={require("D:/kuliah/semester 5/PGPBL/reactnative/assets/images/foto.png")}
+          style={styles.foto}
         />
-        <ExternalLink href="https://reactnative.dev/docs/images">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Light and dark mode components">
-        <ThemedText>
-          This template has light and dark mode support. The{' '}
-          <ThemedText type="defaultSemiBold">useColorScheme()</ThemedText> hook lets you inspect
-          what the user&apos;s current color scheme is, and so you can adjust UI colors accordingly.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Animations">
-        <ThemedText>
-          This template includes an example of an animated component. The{' '}
-          <ThemedText type="defaultSemiBold">components/HelloWave.tsx</ThemedText> component uses
-          the powerful{' '}
-          <ThemedText type="defaultSemiBold" style={{ fontFamily: Fonts.mono }}>
-            react-native-reanimated
-          </ThemedText>{' '}
-          library to create a waving hand animation.
-        </ThemedText>
-        {Platform.select({
-          ios: (
-            <ThemedText>
-              The <ThemedText type="defaultSemiBold">components/ParallaxScrollView.tsx</ThemedText>{' '}
-              component provides a parallax effect for the header image.
+
+        <View style={[styles.card, { alignItems: "center" }]}>
+          <View style={{ justifyContent: "center", alignItems: "center", width: "100%" }}>
+            <ThemedText style={[styles.featureTitle, { textAlign: "center" }]}>
+              Main Feature
             </ThemedText>
-          ),
-        })}
-      </Collapsible>
-    </ParallaxScrollView>
+          </View>
+        </View>
+
+        {/* ======================================================== */}
+        {/* FITUR - Tambah Titik Wisata */}
+        {/* ======================================================== */}
+        <View style={styles.card}>
+          <View style={styles.featureItem}>
+            <FontAwesome5 name="plus-circle" size={18} color="#FF7582" style={styles.icon} />
+            <View style={styles.textContainer}>
+              <ThemedText style={styles.featureTitle}>
+                Tambah Titik Wisata:
+              </ThemedText>
+
+              <ThemedText style={styles.descriptionText}>
+                Pengguna dapat menambahkan lokasi wisata baru lengkap dengan nama, koordinat, jam operasional,
+                dan informasi pendukung lainnya.
+              </ThemedText>
+            </View>
+          </View>
+        </View>
+
+        {/* ======================================================== */}
+        {/* FITUR - Edit Titik Wisata */}
+        {/* ======================================================== */}
+        <View style={styles.card}>
+          <View style={styles.featureItem}>
+            <FontAwesome5 name="edit" size={18} color="#FF7582" style={styles.icon} />
+            <View style={styles.textContainer}>
+              <ThemedText style={styles.featureTitle}>
+                Edit & Perbarui Informasi Lokasi:
+              </ThemedText>
+
+              <ThemedText style={styles.descriptionText}>
+                Setiap titik wisata yang sudah ditambahkan dapat diperbarui kapan saja, termasuk perubahan
+                deskripsi, fasilitas, HTM, atau koordinat.
+              </ThemedText>
+            </View>
+          </View>
+        </View>
+
+        {/* ======================================================== */}
+        {/* FITUR - Hapus Titik Wisata */}
+        {/* ======================================================== */}
+        <View style={styles.card}>
+          <View style={styles.featureItem}>
+            <FontAwesome5 name="trash-alt" size={18} color="#FF7582" style={styles.icon} />
+            <View style={styles.textContainer}>
+              <ThemedText style={styles.featureTitle}>
+                Hapus Titik Wisata:
+              </ThemedText>
+
+              <ThemedText style={styles.descriptionText}>
+                Lokasi yang tidak lagi relevan dapat dihapus dengan mudah, menjaga data tetap rapi dan akurat.
+              </ThemedText>
+            </View>
+          </View>
+        </View>
+
+      </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  headerImage: {
-    color: '#808080',
-    bottom: -90,
-    left: -35,
-    position: 'absolute',
+  container: {
+    flex: 1,
+    backgroundColor: "#ffffff",
+    overflow: "hidden",
   },
-  titleContainer: {
-    flexDirection: 'row',
-    gap: 8,
+
+  centerContent: {
+    paddingHorizontal: 20,
+    paddingTop: 60,
+    paddingBottom: 40,
+    gap: 15,
+  },
+
+  card: {
+    backgroundColor: "rgba(255, 255, 255, 0.9)",
+    paddingVertical: 20,
+    paddingHorizontal: 20,
+    borderRadius: 20,
+    alignItems: "flex-start",
+    shadowColor: "#000",
+    shadowOpacity: 0.15,
+    shadowRadius: 6,
+    shadowOffset: { width: 0, height: 3 },
+    elevation: 6,
+  },
+
+  title: {
+    fontSize: 45,
+    fontWeight: "800",
+    color: "#355C7D",
+    marginBottom: 4,
+  },
+
+  subtitle: {
+    fontSize: 16,
+    letterSpacing: 0.8,
+    color: "#725A7A",
+    fontWeight: "500",
+    marginBottom: 15,
+  },
+
+  sectionTitle: {
+    fontSize: 20,
+    fontWeight: "700",
+    color: "#FF7582",
+    borderBottomWidth: 2,
+    borderBottomColor: "rgba(255,117,130,0.5)",
+    paddingBottom: 5,
+    marginBottom: 10,
+    width: "100%",
+  },
+
+  descriptionText: {
+    fontSize: 14,
+    color: "#333",
+    lineHeight: 22,
+  },
+
+  featureItem: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+  },
+
+  icon: {
+    marginRight: 15,
+    marginTop: 3,
+  },
+
+  textContainer: {
+    flex: 1,
+  },
+
+  featureTitle: {
+    fontSize: 16,
+    fontWeight: "600",
+    color: "#355C7D",
+    marginBottom: 5,
+  },
+
+  wallpaper: {
+    position: "absolute",
+    width: "100%",
+    height: "100%",
+    top: 0,
+    left: 0,
+    resizeMode: "cover",
+    zIndex: -1,
+  },
+  sectionTitleCenter: {
+    fontSize: 18,
+    fontWeight: "700",
+    color: "#355C7D",
+    textAlign: "center",
+    marginTop: 6,
+    marginBottom: 10,
+  },
+
+  descriptionTextCenter: {
+    fontSize: 14,
+    color: "#333",
+    textAlign: "center",
+    lineHeight: 22,
+  },
+  foto: {
+    width: 370,
+    height: 320,
+    resizeMode: "cover",
+    borderRadius: 15,
+    marginTop: 15,
+    textAlign: "center",
+    alignSelf: "center",
   },
 });

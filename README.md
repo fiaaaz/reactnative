@@ -13,12 +13,11 @@ MALING adalah aplikasi yang bertujuan untuk memudahkan pengguna dalam melihat, m
 
 Fitur-fitur utama:
 
-* Daftar lokasi wisata (real-time)
+* Daftar lokasi wisata 
 * Tambah lokasi wisata baru
 * Edit dan hapus data lokasi
 * Integrasi GPS (latitude, longitude, akurasi)
 * Navigasi langsung ke Google Maps
-* Tampilan UI modern dengan card komponen
 
 ---
 

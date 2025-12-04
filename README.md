@@ -1,50 +1,98 @@
-# Welcome to your Expo app 👋
+# 🗺️ **MALING — Mobile Pemetaan Wisata Malang**
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## 📌 **1. Nama Produk**
 
-## Get started
+**MALING (Malang Location Mapping App)**
+Aplikasi mobile untuk pemetaan lokasi wisata di Kota Malang berbasis React Native dan Firebase.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 📘 **2. Deskripsi Produk**
 
-2. Start the app
+MALING adalah aplikasi yang bertujuan untuk memudahkan pengguna dalam melihat, menambah, mengedit, dan menghapus data lokasi wisata di Kota Malang. Aplikasi ini menggunakan **Firebase Realtime Database** sebagai penyimpanan data dan menyediakan fitur integrasi **GPS** untuk pengambilan koordinat otomatis serta akses cepat menuju lokasi melalui **Google Maps**.
 
-   ```bash
-   npx expo start
-   ```
+Fitur-fitur utama:
 
-In the output, you'll find options to open the app in a
+* Daftar lokasi wisata (real-time)
+* Tambah lokasi wisata baru
+* Edit dan hapus data lokasi
+* Integrasi GPS (latitude, longitude, akurasi)
+* Navigasi langsung ke Google Maps
+* Tampilan UI modern dengan card komponen
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🧩 **3. Komponen Pembangun Produk**
 
-## Get a fresh project
+### **A. Frontend**
 
-When you're ready, run:
+* **React Native (Expo)**
+* **Expo Router**
+* **React Native Maps**
+* **Expo Location**
+* **FontAwesome5 Icons**
+* Komponen custom:
 
-```bash
-npm run reset-project
+  * `ThemedText`
+  * `ThemedView`
+
+### **B. Backend**
+
+* **Firebase Realtime Database**
+
+### **C. Fitur Teknis**
+
+* CRUD Data Lokasi Wisata
+* Realtime Listener dengan `onValue()`
+* Fetch Koordinat Otomatis (Expo Location)
+* Navigasi ke Google Maps (`Linking.openURL`)
+
+---
+
+## 🗃️ **4. Sumber Data**
+
+Data diperoleh dari:
+
+1. **Input pengguna** melalui form aplikasi
+2. **Firebase Realtime Database**, dengan struktur utama:
+
+```
+lokasiWisata/
+   ┣ idLokasi1/
+   ┃   ┣ name
+   ┃   ┣ coordinates
+   ┃   ┣ jamOperasional
+   ┃   ┣ hargaTiketMasuk
+   ┃   ┣ fasilitas
+   ┃   ┣ kontakPengelola
+   ┃   ┗ accuration
+   ┗ idLokasi2/
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## 🖼️ **5. Tangkapan Layar Komponen Penting**
 
-To learn more about developing your project with Expo, look at the following resources:
+###  **Landing page**
+<img width="180" alt="image" src="https://github.com/user-attachments/assets/ce29ec6f-231b-4615-9e11-42b4d8f79cfc" />
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### 📍 **About**
+<img width="180" alt="image" src="https://github.com/user-attachments/assets/6ffc0472-ab0f-4c6d-989d-5df2392ce13cb" />
 
-## Join the community
+### 📍 **Beranda – Daftar Lokasi Wisata**
 
-Join our community of developers creating universal apps.
+<img width="180" alt="image" src="https://github.com/user-attachments/assets/662422fd-2885-46ab-87ac-36b42366406b" />
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### ➕ **Form Tambah Lokasi**
+
+<img width="180" alt="image" src="https://github.com/user-attachments/assets/5dc00001-90fb-4594-b537-62e792d03705" />
+
+### ✏️ **Form Edit Lokasi**
+
+<img width="180" alt="image" src="https://github.com/user-attachments/assets/cf96f5f7-5376-4dcc-846d-83eb362adfc5" />
+
+### 🗺️ **Halaman Peta**
+
+<img width="180" alt="image" src="https://github.com/user-attachments/assets/a30172a9-6774-4e99-af2f-ff2a1c2db7c0" />
+
+---

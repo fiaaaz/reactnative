@@ -1,15 +1,15 @@
-# 🗺️ **MALING — Mobile Pemetaan Wisata Malang**
+# 🗺️ **NOTA — NOtes TrAvel**
 
 ## 📌 **1. Nama Produk**
 
-**MALING (Malang Location Mapping App)**
-Aplikasi mobile untuk pemetaan lokasi wisata di Kota Malang berbasis React Native dan Firebase.
+**NOTA — NOtes TrAvel**
+Aplikasi catatan pariwisata terpadu untuk memo singkat tentang keunikan dan pesona Kota Tujuan berbasis React Native dan Firebase.
 
 ---
 
 ## 📘 **2. Deskripsi Produk**
 
-MALING adalah aplikasi yang bertujuan untuk memudahkan pengguna dalam melihat, menambah, mengedit, dan menghapus data lokasi wisata di Kota Malang. Aplikasi ini menggunakan **Firebase Realtime Database** sebagai penyimpanan data dan menyediakan fitur integrasi **GPS** untuk pengambilan koordinat otomatis serta akses cepat menuju lokasi melalui **Google Maps**.
+NOTA adalah aplikasi catatan pariwisata terpadu untuk memo singkat tentang keunikan dan pesona Kota Tujuan. Aplikasi ini menggunakan **Firebase Realtime Database** sebagai penyimpanan data dan menyediakan fitur integrasi **GPS** untuk pengambilan koordinat otomatis serta akses cepat menuju lokasi melalui **Google Maps**.
 
 Fitur-fitur utama:
 

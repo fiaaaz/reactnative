@@ -73,10 +73,10 @@ lokasiWisata/
 ## 🖼️ **5. Tangkapan Layar Komponen Penting**
 
 ###  **Landing page**
-<img width="180" alt="image" src="https://github.com/user-attachments/assets/ce29ec6f-231b-4615-9e11-42b4d8f79cfc" />
+<img width="180" alt="image" src="https://github.com/user-attachments/assets/de77b66f-9f1a-475d-9a98-2b0dae177702" />
 
 ### 📍 **About**
-<img width="180" alt="image" src="https://github.com/user-attachments/assets/6ffc0472-ab0f-4c6d-989d-5df2392ce13cb" />
+<img width="180" alt="image" src="https://github.com/user-attachments/assets/4358e736-ad7b-4c25-a984-14fe4cf97dd1" />
 
 ### 📍 **Beranda – Daftar Lokasi Wisata**
 
